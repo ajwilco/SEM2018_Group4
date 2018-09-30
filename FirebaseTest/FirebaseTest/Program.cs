@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -22,11 +23,12 @@ namespace FirebaseTest
 
                 if (choice == 1)
                 {
-                    createUserJson();
+                    createUserJson("https://sportscave-c0722.firebaseio.com/.json");
                 }
                 else if (choice == 2)
                 {
-                    Console.WriteLine("Get user is currently not functional.");
+                    //Console.WriteLine("Get user is currently not functional.");
+                    getUserJson("https://sportscave-c0722.firebaseio.com/.json");
                 }
                 else if (choice == 3)
                 {
@@ -40,7 +42,7 @@ namespace FirebaseTest
             }
         }
 
-        public static void createUserJson()
+        public static void createUserJson(string url)
         {
             try
             {
@@ -55,7 +57,7 @@ namespace FirebaseTest
                     Value = userName
                 });
 
-                var request = WebRequest.CreateHttp("https://sportscave-c0722.firebaseio.com/.json");
+                var request = WebRequest.CreateHttp(url);
                 request.Method = "POST";
                 request.ContentType = "application/json";
                 var buffer = Encoding.UTF8.GetBytes(json);
@@ -70,6 +72,23 @@ namespace FirebaseTest
             {
                 Console.WriteLine("ERROR: " + e.StackTrace.ToString());
             }
+        }
+
+        async static void getUserJson(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage msg = await client.GetAsync(url))
+                {
+                    using (HttpContent content = msg.Content)
+                    {
+                        string cont = await content.ReadAsStringAsync();
+                        Console.WriteLine(cont);
+                    }
+
+                }
+            }
+
         }
         
     }
