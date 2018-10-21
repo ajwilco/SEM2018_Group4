@@ -1,0 +1,16 @@
+{
+  "name": "sportscave",
+  "version": "1.0.0",
+  "description": "Sports cave chat and social web app",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.7.0",
+    "mongodb": "^3.1.8",
+    "socket.io": "^2.1.1"
+  }
+}
