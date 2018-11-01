@@ -1,16 +1,28 @@
 {
   "name": "sportscave",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Sports cave chat and social web app",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "test": "node server.js"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "eslint": "^5.7.0",
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.1.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "eslint": "^5.8.0",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
     "mongodb": "^3.1.8",
+    "mongoose": "^5.3.7",
+    "mongoose-type-email": "^1.0.9",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "popper": "^1.0.1",
     "socket.io": "^2.1.1"
   }
 }
