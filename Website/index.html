@@ -32,7 +32,22 @@
 <br>
 <center><img src="Graphics/Sports-Cave.png"></center>
 <p align="center"><b>Under Construction - SEM Group 4</b></p>
-
+<script>
+$.ajax
+({
+  type: "GET",
+  url: {https://api.mysportsfeeds.com/v1.0/pull/nfl/2017-regular/cumulative_player_stats.json},
+  dataType: 'json',
+  async: false,
+  headers: {
+    "Authorization": "Basic " + btoa(389c9cb2-7e84-4cb4-a0ec-b2fbaa + ":" + {password})
+  },
+  data: '{ "comment" }',
+  success: function (){
+    alert('Thanks for your comment!'); 
+  }
+});
+</script>
 <div class="side-button"><strong>Chat (65)</strong></div>
 <div class="side-button-active"><strong>Jets vs Bills</strong></div>
 </body>
