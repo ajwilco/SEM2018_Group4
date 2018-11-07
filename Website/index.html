@@ -3,6 +3,22 @@
 <title>Sports Cave</title>
 <link rel="icon" type="image/png" href="Graphics/Sports-Cave.ico" />
 <link rel="stylesheet" href="styles.css">
+<script>
+$.ajax
+({
+  type: "GET",
+  url: https://api.mysportsfeeds.com/v1.0/pull/nfl/2017-regular/cumulative_player_stats.json?player=smith,
+  dataType: 'json',
+  async: false,
+  headers: {
+    "Authorization": "Basic " + btoa(389c9cb2-7e84-4cb4-a0ec-b2fbaa + ":" + Apr231991)
+  },
+  data: '{ "comment" }',
+  success: function (res){
+    $('#result').html(res)
+  }
+});
+</script>
 </head>
 <body class="body">
 <div class="header">
@@ -32,22 +48,9 @@
 <br>
 <center><img src="Graphics/Sports-Cave.png"></center>
 <p align="center"><b>Under Construction - SEM Group 4</b></p>
-<script>
-$.ajax
-({
-  type: "GET",
-  url: {https://api.mysportsfeeds.com/v1.0/pull/nfl/2017-regular/cumulative_player_stats.json},
-  dataType: 'json',
-  async: false,
-  headers: {
-    "Authorization": "Basic " + btoa(389c9cb2-7e84-4cb4-a0ec-b2fbaa + ":" + {password})
-  },
-  data: '{ "comment" }',
-  success: function (){
-    alert('Thanks for your comment!'); 
-  }
-});
-</script>
+<div class="container">
+<div id="result" style="color:red"></div>
+</div>
 <div class="side-button"><strong>Chat (65)</strong></div>
 <div class="side-button-active"><strong>Jets vs Bills</strong></div>
 </body>
