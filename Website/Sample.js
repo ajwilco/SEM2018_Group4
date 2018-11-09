@@ -6,7 +6,7 @@ $.ajax
   dataType: 'json',
   async: false,
   headers: {
-    "Authorization": "Basic " + btoa(389c9cb2-7e84-4cb4-a0ec-b2fbaa + ":" + Apr231991)
+    "Authorization": "Basic " + btoa("389c9cb2-7e84-4cb4-a0ec-b2fbaa:Apr231991")
   },
   data: '{ "comment" }',
   success: function (){
